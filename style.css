@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Primary Colors */
+  --lightRed: hsl(0, 100%, 67%);
+  --orangeYellow: hsl(39, 100%, 56%);
+  --greenTeal: hsl(166, 100%, 37%);
+  --cobaltBlue: hsl(234, 85%, 45%);
+
+  /* with opacity */
+  --lightRedOpacity: hsl(0, 100%, 67%, 0.1);
+  --orangeYellowOpacity: hsl(39, 100%, 56%, 0.1);
+  --greenTealOpacity: hsl(166, 100%, 37%, 0.1);
+  --cobaltBlueOpacity: hsl(234, 85%, 45%, 0.1);
+
+  /* Gradient */
+  /* background */
+  --lightSlateBlue: hsl(252, 100%, 67%);
+  --lightRoyalBlue: hsl(241, 81%, 54%);
+
+  /* Circle */
+  --violetBlue: hsla(256, 72%, 46%, 1);
+  --persianBlue: hsla(241, 72%, 46%, 0);
+
+  /* Neutral */
+  --white: hsl(0, 0%, 100%);
+  --paleBlue: hsl(221, 100%, 96%);
+  --lightLavender: hsl(241, 100%, 89%);
+  --darkGrayBlue: hsl(224, 30%, 27%);
+}
+
+body {
+  font-family: "Hanken Grotesk";
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 375px;
+}
+
+.result {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(
+    var(--lightSlateBlue),
+    var(--lightRoyalBlue)
+  );
+  border-radius: 0 0 30px 30px;
+  padding-bottom: 20px;
+}
+
+.score h1 {
+  color: var(--lightLavender);
+  font-weight: 500;
+  font-size: 18px;
+  padding: 20px;
+}
+
+.score .circle {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  background-image: linear-gradient(var(--violetBlue), var(--persianBlue));
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: none;
+}
+
+.score .circle span:nth-child(1) {
+  font-size: 55px;
+  font-weight: 900;
+  color: var(--white);
+}
+
+.score .circle span:nth-child(2) {
+  color: var(--lightLavender);
+  opacity: 0.5;
+  font-size: 16px;
+}
+
+.score h2 {
+  color: var(--white);
+  font-size: 25px;
+  padding: 10px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.score p {
+  text-align: center;
+  padding: 0 50px;
+  color: var(--lightLavender);
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  gap: 20px;
+}
+
+.detail h2 {
+  align-self: self-start;
+  font-size: 18px;
+}
+
+.component {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 18px 15px;
+  border-radius: 10px;
+}
+
+.detail .component .img {
+  display: flex;
+  gap: 10px;
+}
+
+.detail .reaction .img span {
+  color: var(--lightRed);
+}
+
+.detail .reaction span:nth-child(1),
+.detail .memory span:nth-child(1),
+.detail .verbal span:nth-child(1),
+.detail .visual span:nth-child(1) {
+  opacity: 0.5;
+}
+
+.detail .memory .img span {
+  color: var(--orangeYellow);
+}
+
+.detail .verbal .img span {
+  color: var(--greenTeal);
+}
+
+.detail .visual .img span {
+  color: var(--cobaltBlue);
+}
+
+.reaction {
+  background-color: var(--lightRedOpacity);
+}
+
+.memory {
+  background-color: var(--orangeYellowOpacity);
+}
+
+.verbal {
+  background-color: var(--greenTealOpacity);
+}
+
+.visual {
+  background-color: var(--cobaltBlueOpacity);
+}
+
+button {
+  display: flex;
+  width: 100%;
+  padding: 15px;
+  border-radius: 50px;
+  justify-content: center;
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 500;
+  background-color: var(--darkGrayBlue);
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  background-image: linear-gradient(
+    var(--lightSlateBlue),
+    var(--lightRoyalBlue)
+  );
+}
+
+@media only screen and (min-width: 1440px) {
+  .container {
+    width: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .result {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 18px 21px 58px -24px rgba(0, 0, 0, 0.75);
+    border-radius: 30px;
+  }
+
+  .score {
+    width: 50%;
+    justify-content: space-around;
+    border-radius: 30px;
+  }
+
+  .score .circle {
+    width: 170px;
+    height: 170px;
+  }
+
+  .detail {
+    width: 50%;
+  }
+}
